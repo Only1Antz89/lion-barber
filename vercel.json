@@ -6,6 +6,13 @@
   "outputDirectory": "dist",
   "cleanUrls": false,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/book",
+      "destination": "https://barber-dresser.vercel.app/lions-croydon/book",
+      "permanent": false
+    }
+  ],
   "rewrites": [
     {
       "source": "/services",
