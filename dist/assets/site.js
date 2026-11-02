@@ -8,3 +8,6 @@ const legacyPages={'#services':'/services.html','#gallery':'/craft.html','#info'
 
 // A grade is a length reference; fade placement and top length are independent.
 document.querySelectorAll('.grade-choice').forEach(button=>{button.addEventListener('click',()=>{document.querySelectorAll('.grade-choice').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));document.getElementById('grade-title').textContent=button.querySelector('span').textContent==='Skin'?'Skin':'Grade '+button.querySelector('span').textContent;document.getElementById('grade-length').textContent=button.dataset.length;document.getElementById('grade-copy').textContent=button.dataset.copy;document.querySelector('.length-swatch').style.setProperty('--hair-length',button.dataset.hair+'px');});});
+
+// Mouse colour reveal is temporary; touch retains the tap toggle.
+document.querySelectorAll(".beard-photo").forEach(image=>{const photo=image.closest(".photo");function reset(){photo.classList.remove("reveal");photo.setAttribute("aria-pressed","false")}photo.addEventListener("pointerleave",event=>{if(event.pointerType!=="touch")reset()});photo.addEventListener("blur",reset)});
